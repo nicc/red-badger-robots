@@ -19,6 +19,10 @@ class Position
     [x, y, orientation] == [another_position.x, another_position.y, another_position.orientation]
   end
 
+  def to_s
+    "#{x} #{y} #{orientation}"
+  end
+
   private
   def self.valid?(position_string)
   	return position_string.match(VALID_STRING)
