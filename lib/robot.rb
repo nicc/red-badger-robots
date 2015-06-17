@@ -11,7 +11,6 @@ class Robot
     @off_planet
   end
 
-  private
   def execute(instruction_string)
     return if off_planet? # ignore off-planet instructions
     return if instruction_string == "F" && @map.has_scent_at?(position) # ignore terrible orders

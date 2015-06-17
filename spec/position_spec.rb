@@ -22,5 +22,10 @@ RSpec.describe Position do
   it "can represent itself as a string" do
     expect(Position.from_s("3 2 N").to_s).to eq("3 2 N")
   end
+
+  it "evaluates equality" do
+    expect(Position.from_s("1 1 W")).to eq(Position.from_s("1 1 W"))
+    expect(Position.from_s("1 1 W")).not_to eq(Position.from_s("1 1 E"))
+  end
   
 end

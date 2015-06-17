@@ -1,6 +1,10 @@
 class Mars
   attr_reader :x, :y, :scents
 
+  def self.from_s(map_string)
+    self.new(*map_string.split(" ").map(&:to_i))
+  end
+
 	def initialize(x,y)
     raise ArgumentError.new("Mars is made of integers, please") unless [x,y].all? {|a| a.is_a?(Integer) }
     raise ArgumentError.new("Mars can't be taller or wider than 50") unless [x,y].all? {|i| i <= 50 }

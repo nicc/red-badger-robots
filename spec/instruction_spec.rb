@@ -12,11 +12,6 @@ RSpec.describe Instruction do
     expect{ Instruction.new("4") }.to raise_error(ArgumentError)
   end
 
-  it "evaluates equality" do
-    expect(Position.from_s("1 1 W")).to eq(Position.from_s("1 1 W"))
-    expect(Position.from_s("1 1 W")).not_to eq(Position.from_s("1 1 E"))
-  end
-
   context "L" do
     it "adjusts a position's orientation ninety degress anti-clockwise" do
       expect(Instruction.new("L").execute(Position.from_s("1 1 N"))).to eq(Position.from_s("1 1 W"))
