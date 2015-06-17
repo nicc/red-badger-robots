@@ -22,7 +22,7 @@ RSpec.describe Instruction do
   end
 
   context "R" do
-    it "adjusts a position's orientation ninety degress anti-clockwise" do
+    it "adjusts a position's orientation ninety degress clockwise" do
       expect(Instruction.new("R").execute(Position.from_s("1 1 N"))).to eq(Position.from_s("1 1 E"))
       expect(Instruction.new("R").execute(Position.from_s("1 1 E"))).to eq(Position.from_s("1 1 S"))
       expect(Instruction.new("R").execute(Position.from_s("1 1 S"))).to eq(Position.from_s("1 1 W"))
